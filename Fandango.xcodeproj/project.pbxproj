@@ -12,6 +12,15 @@
 		C68606751C0B79830036084E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68606731C0B79830036084E /* Main.storyboard */; };
 		C68606771C0B79830036084E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68606761C0B79830036084E /* Assets.xcassets */; };
 		C686067A1C0B79830036084E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68606781C0B79830036084E /* LaunchScreen.storyboard */; };
+		C68606851C0B7CB10036084E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606841C0B7CB10036084E /* SystemConfiguration.framework */; };
+		C68606871C0B7CB60036084E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606861C0B7CB60036084E /* UIKit.framework */; };
+		C686068D1C0B7CD30036084E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606881C0B7CD30036084E /* AudioToolbox.framework */; };
+		C686068E1C0B7CD30036084E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606891C0B7CD30036084E /* AVFoundation.framework */; };
+		C686068F1C0B7CD40036084E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068A1C0B7CD30036084E /* CFNetwork.framework */; };
+		C68606901C0B7CD40036084E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068B1C0B7CD30036084E /* CoreGraphics.framework */; };
+		C68606911C0B7CD40036084E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068C1C0B7CD30036084E /* Foundation.framework */; };
+		C68606931C0B7CDB0036084E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606921C0B7CDB0036084E /* Security.framework */; };
+		C6F2A5A41C0B8009004DBB81 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		C68606761C0B79830036084E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C68606791C0B79830036084E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C686067B1C0B79830036084E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68606841C0B7CB10036084E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C68606861C0B7CB60036084E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C68606881C0B7CD30036084E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C68606891C0B7CD30036084E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C686068A1C0B7CD30036084E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C686068B1C0B7CD30036084E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C686068C1C0B7CD30036084E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C68606921C0B7CDB0036084E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = lib/SpeechKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +47,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68606931C0B7CDB0036084E /* Security.framework in Frameworks */,
+				C686068D1C0B7CD30036084E /* AudioToolbox.framework in Frameworks */,
+				C686068E1C0B7CD30036084E /* AVFoundation.framework in Frameworks */,
+				C6F2A5A41C0B8009004DBB81 /* SpeechKit.framework in Frameworks */,
+				C686068F1C0B7CD40036084E /* CFNetwork.framework in Frameworks */,
+				C68606901C0B7CD40036084E /* CoreGraphics.framework in Frameworks */,
+				C68606911C0B7CD40036084E /* Foundation.framework in Frameworks */,
+				C68606871C0B7CB60036084E /* UIKit.framework in Frameworks */,
+				C68606851C0B7CB10036084E /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				C686066E1C0B79830036084E /* Fandango */,
+				C68606831C0B7BF40036084E /* Frameworks */,
 				C686066D1C0B79830036084E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,13 +83,29 @@
 			isa = PBXGroup;
 			children = (
 				C686066F1C0B79830036084E /* AppDelegate.swift */,
-				C68606711C0B79830036084E /* ViewController.swift */,
-				C68606731C0B79830036084E /* Main.storyboard */,
 				C68606761C0B79830036084E /* Assets.xcassets */,
-				C68606781C0B79830036084E /* LaunchScreen.storyboard */,
 				C686067B1C0B79830036084E /* Info.plist */,
+				C68606781C0B79830036084E /* LaunchScreen.storyboard */,
+				C68606731C0B79830036084E /* Main.storyboard */,
+				C68606711C0B79830036084E /* ViewController.swift */,
 			);
 			path = Fandango;
+			sourceTree = "<group>";
+		};
+		C68606831C0B7BF40036084E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */,
+				C68606921C0B7CDB0036084E /* Security.framework */,
+				C68606881C0B7CD30036084E /* AudioToolbox.framework */,
+				C68606891C0B7CD30036084E /* AVFoundation.framework */,
+				C686068A1C0B7CD30036084E /* CFNetwork.framework */,
+				C686068B1C0B7CD30036084E /* CoreGraphics.framework */,
+				C686068C1C0B7CD30036084E /* Foundation.framework */,
+				C68606861C0B7CB60036084E /* UIKit.framework */,
+				C68606841C0B7CB10036084E /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +193,7 @@
 				C68606741C0B79830036084E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		C68606781C0B79830036084E /* LaunchScreen.storyboard */ = {
@@ -157,6 +202,7 @@
 				C68606791C0B79830036084E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -247,6 +293,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
 				INFOPLIST_FILE = Fandango/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gvsu.cis623.cfr.Fandango;
@@ -258,6 +309,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
 				INFOPLIST_FILE = Fandango/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gvsu.cis623.cfr.Fandango;
@@ -284,6 +340,7 @@
 				C68606801C0B79830036084E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
