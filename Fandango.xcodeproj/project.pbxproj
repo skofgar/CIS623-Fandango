@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61415621C0B8EDB00200989 /* NuanceHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C61415611C0B8EDB00200989 /* NuanceHeader.m */; };
+		C616096F1C0B9BE2001BB42F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C616096E1C0B9BE2001BB42F /* Constants.swift */; };
 		C68606701C0B79830036084E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686066F1C0B79830036084E /* AppDelegate.swift */; };
 		C68606721C0B79830036084E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68606711C0B79830036084E /* ViewController.swift */; };
 		C68606751C0B79830036084E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68606731C0B79830036084E /* Main.storyboard */; };
@@ -21,9 +23,13 @@
 		C68606911C0B7CD40036084E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068C1C0B7CD30036084E /* Foundation.framework */; };
 		C68606931C0B7CDB0036084E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606921C0B7CDB0036084E /* Security.framework */; };
 		C6F2A5A41C0B8009004DBB81 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */; };
+		C6F2A5A71C0B83CD004DBB81 /* VoiceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A5A61C0B83CD004DBB81 /* VoiceRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C61415601C0B8EDB00200989 /* NuanceHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuanceHeader.h; sourceTree = "<group>"; };
+		C61415611C0B8EDB00200989 /* NuanceHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuanceHeader.m; sourceTree = "<group>"; };
+		C616096E1C0B9BE2001BB42F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C686066C1C0B79830036084E /* Fandango.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fandango.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C686066F1C0B79830036084E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68606711C0B79830036084E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +46,8 @@
 		C686068C1C0B7CD30036084E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C68606921C0B7CDB0036084E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = lib/SpeechKit.framework; sourceTree = "<group>"; };
+		C6F2A5A61C0B83CD004DBB81 /* VoiceRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceRecognizer.swift; sourceTree = "<group>"; };
+		C6F2A5A81C0B8406004DBB81 /* Fandango-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fandango-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C616096D1C0B9BD8001BB42F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C616096E1C0B9BE2001BB42F /* Constants.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C61609701C0B9BFE001BB42F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C68606711C0B79830036084E /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		C68606631C0B79830036084E = {
 			isa = PBXGroup;
 			children = (
@@ -82,12 +106,14 @@
 		C686066E1C0B79830036084E /* Fandango */ = {
 			isa = PBXGroup;
 			children = (
+				C616096D1C0B9BD8001BB42F /* Config */,
+				C6F2A5AB1C0B8411004DBB81 /* Supporting Files */,
+				C61609701C0B9BFE001BB42F /* ViewController */,
+				C6F2A5A51C0B8385004DBB81 /* Voice */,
 				C686066F1C0B79830036084E /* AppDelegate.swift */,
 				C68606761C0B79830036084E /* Assets.xcassets */,
-				C686067B1C0B79830036084E /* Info.plist */,
 				C68606781C0B79830036084E /* LaunchScreen.storyboard */,
 				C68606731C0B79830036084E /* Main.storyboard */,
-				C68606711C0B79830036084E /* ViewController.swift */,
 			);
 			path = Fandango;
 			sourceTree = "<group>";
@@ -106,6 +132,25 @@
 				C68606841C0B7CB10036084E /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6F2A5A51C0B8385004DBB81 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				C61415601C0B8EDB00200989 /* NuanceHeader.h */,
+				C61415611C0B8EDB00200989 /* NuanceHeader.m */,
+				C6F2A5A61C0B83CD004DBB81 /* VoiceRecognizer.swift */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		C6F2A5AB1C0B8411004DBB81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6F2A5A81C0B8406004DBB81 /* Fandango-Bridging-Header.h */,
+				C686067B1C0B79830036084E /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C616096F1C0B9BE2001BB42F /* Constants.swift in Sources */,
+				C61415621C0B8EDB00200989 /* NuanceHeader.m in Sources */,
 				C68606721C0B79830036084E /* ViewController.swift in Sources */,
 				C68606701C0B79830036084E /* AppDelegate.swift in Sources */,
+				C6F2A5A71C0B83CD004DBB81 /* VoiceRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,15 +341,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/lib",
 				);
-				INFOPLIST_FILE = Fandango/Info.plist;
+				INFOPLIST_FILE = "Fandango/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gvsu.cis623.cfr.Fandango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fandango/Supporting Files/Fandango-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -309,15 +360,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/lib",
 				);
-				INFOPLIST_FILE = Fandango/Info.plist;
+				INFOPLIST_FILE = "Fandango/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gvsu.cis623.cfr.Fandango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fandango/Supporting Files/Fandango-Bridging-Header.h";
 			};
 			name = Release;
 		};
