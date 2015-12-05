@@ -71,8 +71,9 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     {
         //The voice recognition process has understood something
         for value in results.results {
-            print(value)
+            print("Input: " , value)
         }
+        print(LanguageParser.sharedInstance.parse(results.results as! [String]))
     }
     
     func recognizer(recognizer: SKRecognizer!, didFinishWithError error: NSError!, suggestion: String!)
