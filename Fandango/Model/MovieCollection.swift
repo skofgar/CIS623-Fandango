@@ -33,28 +33,24 @@ class MovieCollection {
     }
     
     private func setupMovies() {
-        let test = moviesByName["name"]
-        print(test)
-        
         for movie in movies {
             let data = Movie(name: movie.name.lowercaseString, theatre: movie.theatre.lowercaseString, showtime: movie.showtime.lowercaseString)
             
-            addMovie(data, toDictionary: &moviesByName)
-            addMovie(data, toDictionary: &moviesByTime)
-            addMovie(data, toDictionary: &moviesByTheatre)
+            addMovie(data, key: data.name, toDictionary: &moviesByName)
+            addMovie(data, key: data.showtime, toDictionary: &moviesByTime)
+            addMovie(data, key: data.theatre, toDictionary: &moviesByTheatre)
         }
     }
     
-    private func addMovie(movie: Movie, inout toDictionary: Dictionary<String, [Movie]>) {
-        if (nil == moviesByName[movie.name]) {
-            toDictionary[movie.name] = [movie]
+    private func addMovie(movie: Movie, key: String, inout toDictionary: Dictionary<String, [Movie]>) {
+        if (nil == toDictionary[key]) {
+            toDictionary[key] = [movie]
         } else {
-            toDictionary[movie.name]?.append(movie)
+            toDictionary[key]?.append(movie)
         }
     }
     
     func lookupByMovie(name: String) -> [Movie]? {
-        print(self.moviesByName[name.lowercaseString])
         return self.moviesByName[name.lowercaseString]
     }
     
