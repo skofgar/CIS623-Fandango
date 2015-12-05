@@ -11,18 +11,19 @@ class LanguageParser {
     static let sharedInstance = LanguageParser()
 
     
-    func parse(input: [String]) -> MovieDictionary {
-        var results = MovieDictionary()
+    func parse(input: [String]) -> MovieDictionarySet {
+        var results = MovieDictionarySet()
         
         for value in input {
-            results.merge(parse(value))
+            let dictionary = parse(value)
+            results = self.merge(results, dictionaryB: dictionary)
         }
         return results
     }
     
-    func parse(input: String) -> MovieDictionary {
+    func parse(input: String) -> MovieDictionarySet {
         let tokens: [String] = input.componentsSeparatedByString(" ")
-        var results = MovieDictionary()
+        var results = MovieDictionarySet()
         
         for token in tokens {
             checkAndAddToDictonary(MovieCollection.sharedInstance.lookupByMovie(token), dic: &results)
@@ -32,20 +33,40 @@ class LanguageParser {
         return results
     }
     
-    func checkAndAddToDictonary(movies: [Movie]?, inout dic: MovieDictionary) {
-        print(movies)
+    func checkAndAddToDictonary(movies: [Movie]?, inout dic: MovieDictionarySet) {
         if (nil != movies) {
             addToDictionary(movies!, dic: &dic)
         }
     }
     
-    func addToDictionary(movies: [Movie], inout dic: MovieDictionary)  {
+    func addToDictionary(movies: [Movie], inout dic: MovieDictionarySet)  {
         for movie in movies {
             if (nil == dic[movie.name]) {
-                // TODO: currently overwriting the movie (instead of storing all alternative possibilites)
-                dic[movie.name] = movie
+                dic[movie.name] = Set<Movie>()
+                dic[movie.name]?.insert(movie)
+            } else {
+                if (false == dic[movie.name]!.contains(movie)) {
+                    dic[movie.name]?.insert(movie)
+                }
             }
         }
+    }
+    
+    func merge(dictionaryA: MovieDictionarySet, dictionaryB: MovieDictionarySet) -> MovieDictionarySet {
+        var result = MovieDictionarySet()
+        for (k, v) in dictionaryA {
+            result.updateValue(v, forKey: k)
+        }
+        
+        for (k, v) in dictionaryB {
+            if (nil == result[k]) {
+                result.updateValue(v, forKey: k)
+            } else {
+                result[k] = result[k]?.union(v)
+            }
+        }
+        
+        return result
     }
 }
 
