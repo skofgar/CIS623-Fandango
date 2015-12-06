@@ -25,6 +25,8 @@
 		C68606901C0B7CD40036084E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068B1C0B7CD30036084E /* CoreGraphics.framework */; };
 		C68606911C0B7CD40036084E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068C1C0B7CD30036084E /* Foundation.framework */; };
 		C68606931C0B7CDB0036084E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606921C0B7CDB0036084E /* Security.framework */; };
+		C6D6FA241C13AC7F00AE387F /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D6FA231C13AC7F00AE387F /* MovieTableViewCell.swift */; };
+		C6D6FA261C13AD5200AE387F /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D6FA251C13AD5200AE387F /* MoviesTableViewController.swift */; };
 		C6F2A5A41C0B8009004DBB81 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		C686068B1C0B7CD30036084E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C686068C1C0B7CD30036084E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C68606921C0B7CDB0036084E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C6D6FA231C13AC7F00AE387F /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		C6D6FA251C13AD5200AE387F /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = lib/SpeechKit.framework; sourceTree = "<group>"; };
 		C6F2A5A81C0B8406004DBB81 /* Fandango-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fandango-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				C68606711C0B79830036084E /* ViewController.swift */,
+				C6D6FA231C13AC7F00AE387F /* MovieTableViewCell.swift */,
+				C6D6FA251C13AD5200AE387F /* MoviesTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 				C61ADEDB1C1289F700C19006 /* Movie.swift in Sources */,
 				C68606721C0B79830036084E /* ViewController.swift in Sources */,
 				C68606701C0B79830036084E /* AppDelegate.swift in Sources */,
+				C6D6FA261C13AD5200AE387F /* MoviesTableViewController.swift in Sources */,
+				C6D6FA241C13AC7F00AE387F /* MovieTableViewCell.swift in Sources */,
 				C61ADEDD1C128A6A00C19006 /* MovieCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

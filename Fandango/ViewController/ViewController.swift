@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate {
 
+    
+    @IBOutlet weak var searchInputView: UIView!
+    @IBOutlet weak var textInputField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SpeechKit.setupWithID(Constants.APP_ID, host: Constants.HOST, port: Constants.PORT, useSSL: Constants.USE_SSL, delegate: self)
@@ -69,10 +73,14 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     
     func recognizer(recognizer: SKRecognizer!, didFinishWithResults results: SKRecognition!)
     {
+        var concatenatedString = ""
         //The voice recognition process has understood something
         for value in results.results {
             print("Input: " , value)
+            concatenatedString += (value as! String) + "\n"
         }
+        textInputField.text = concatenatedString
+        
         print(LanguageParser.sharedInstance.parse(results.results as! [String]))
     }
     
