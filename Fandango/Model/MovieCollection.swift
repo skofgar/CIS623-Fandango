@@ -16,7 +16,9 @@ class MovieCollection {
     
     let movies: [(name: String, theatre: String, showtime: String)] = [
         ("Incredibles","Woodland","7")
+        ,("Incredibles","Woodland","8")
         ,("Incredibles","North","8")
+        ,("Incredibles","North","9")
         ,("Incredibles","Rivertown","7")
         ,("Spectre","North","7")
         ,("Spectre","Rivertown","7")
