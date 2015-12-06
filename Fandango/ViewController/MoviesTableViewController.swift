@@ -36,6 +36,13 @@ class MoviesTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    override func scrollViewDidScroll(tableView: UIScrollView){
+        let parentViewController = self.parentViewController as? ViewController
+        if (nil != parentViewController){
+            parentViewController?.animateLogo()
+        }
+    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

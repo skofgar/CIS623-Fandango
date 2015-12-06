@@ -15,22 +15,26 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrK-Yy-sk0" userLabel="Main">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fandango" translatesAutoresizingMaskIntoConstraints="NO" id="sjb-Bw-lWM">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="sjb-Bw-lWM">
+                                        <rect key="frame" x="0.0" y="0.0" width="328" height="568"/>
                                         <animations/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hci-vd-Bxm">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo_full" translatesAutoresizingMaskIntoConstraints="NO" id="Hci-vd-Bxm">
+                                        <rect key="frame" x="0.0" y="64" width="328" height="200"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="M8r-Wu-842"/>
                                         </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="rJc-gA-TjM">
+                                        <rect key="frame" x="108" y="89" width="106" height="101"/>
+                                        <animations/>
                                     </imageView>
                                 </subviews>
                                 <animations/>
@@ -46,7 +50,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTb-yd-BMe" userLabel="Content">
-                                <rect key="frame" x="8" y="266" width="584" height="278"/>
+                                <rect key="frame" x="4" y="234" width="312" height="278"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="278" id="dY8-z2-cdN"/>
@@ -56,16 +60,16 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbV-ox-EG6" userLabel="Search Bar">
-                                <rect key="frame" x="0.0" y="552" width="600" height="48"/>
+                                <rect key="frame" x="-4" y="520" width="328" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ecp-P6-3QN">
-                                        <rect key="frame" x="8" y="8" width="528" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="256" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSY-cS-uxQ">
-                                        <rect key="frame" x="546" y="8" width="46" height="30"/>
+                                        <rect key="frame" x="274" y="8" width="46" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="hme-Ct-Rrg"/>
@@ -103,7 +107,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UrK-Yy-sk0" secondAttribute="trailing" constant="-20" id="zdD-Bc-kwa"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="mainLogo" destination="Hci-vd-Bxm" id="KsF-iw-diN"/>
+                        <outlet property="mainLogoMark" destination="rJc-gA-TjM" id="gEe-WT-jIK"/>
                         <outlet property="searchInputView" destination="UrK-Yy-sk0" id="wWK-8F-UG9"/>
                         <outlet property="textInputField" destination="Ecp-P6-3QN" id="jUc-Sk-PYZ"/>
                     </connections>
@@ -117,16 +124,16 @@
             <objects>
                 <tableViewController id="yqf-qv-Q9w" customClass="MoviesTableViewController" customModule="Fandango" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xpa-GP-VwU">
-                        <rect key="frame" x="0.0" y="0.0" width="584" height="278"/>
+                        <rect key="frame" x="0.0" y="0.0" width="312" height="278"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="180" id="9pV-xI-dMd" customClass="MovieTableViewCell" customModule="Fandango" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="584" height="180"/>
+                                <rect key="frame" x="0.0" y="28" width="312" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9pV-xI-dMd" id="rbW-vJ-SQv" userLabel="Movie">
-                                    <rect key="frame" x="0.0" y="0.0" width="584" height="179"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="312" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="72c-MR-Gaq">
@@ -136,41 +143,41 @@
                                                 <constraint firstAttribute="width" constant="170" id="mAj-WV-WUR"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o7d-DU-O2g">
-                                            <rect key="frame" x="178" y="0.0" width="390" height="72"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o7d-DU-O2g">
+                                            <rect key="frame" x="178" y="0.0" width="118" height="72"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO7-V7-bmg" userLabel="MovieTitle">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO7-V7-bmg" userLabel="MovieTitle">
+                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CFO-S4-jnq" userLabel="Theatres">
-                                                    <rect key="frame" x="0.0" y="21" width="390" height="51"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CFO-S4-jnq" userLabel="Theatres">
+                                                    <rect key="frame" x="0.0" y="21" width="118" height="51"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyc-fs-dIR" userLabel="TheatreName">
-                                                            <rect key="frame" x="0.0" y="0.0" width="390" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyc-fs-dIR" userLabel="TheatreName">
+                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-3Y-GAD" userLabel="Showtimes">
-                                                            <rect key="frame" x="0.0" y="21" width="390" height="30"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-3Y-GAD" userLabel="Showtimes">
+                                                            <rect key="frame" x="0.0" y="21" width="118" height="30"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biv-Bv-Zhm" userLabel="ShowtimeOne">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biv-Bv-Zhm" userLabel="ShowtimeOne">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
                                                                     <animations/>
                                                                     <state key="normal" title="Button"/>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoN-6C-HPA" userLabel="ShowtimeTwo">
-                                                                    <rect key="frame" x="130" y="0.0" width="130" height="30"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoN-6C-HPA" userLabel="ShowtimeTwo">
+                                                                    <rect key="frame" x="39" y="0.0" width="40" height="30"/>
                                                                     <animations/>
                                                                     <state key="normal" title="Button"/>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-4p-LmH" userLabel="ShowtimeThree">
-                                                                    <rect key="frame" x="260" y="0.0" width="130" height="30"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-4p-LmH" userLabel="ShowtimeThree">
+                                                                    <rect key="frame" x="79" y="0.0" width="39" height="30"/>
                                                                     <animations/>
                                                                     <state key="normal" title="Button"/>
                                                                 </button>
@@ -223,7 +230,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fandango" width="320" height="568"/>
-        <image name="Main_logo" width="105" height="106"/>
+        <image name="background" width="320" height="568"/>
+        <image name="main_logo" width="105" height="106"/>
+        <image name="main_logo_full" width="290" height="150"/>
     </resources>
 </document>

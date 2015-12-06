@@ -12,11 +12,38 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     
     @IBOutlet weak var searchInputView: UIView!
     @IBOutlet weak var textInputField: UITextField!
+    @IBOutlet weak var mainLogo: UIImageView!
+    @IBOutlet weak var mainLogoMark: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         SpeechKit.setupWithID(Constants.APP_ID, host: Constants.HOST, port: Constants.PORT, useSSL: Constants.USE_SSL, delegate: self)
         someAction()
+    }
+    
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        let duration = 1.0
+//        let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
+//        let options = UIViewAnimationOptions.CurveEaseInOut // change the timing curve to `ease-in ease-out`
+//        
+//        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+//            self.mainLogo.alpha = 0
+//            self.mainLogoMark.alpha = 1
+//            
+//            }, completion: { finished in
+//                UIView.animateWithDuration(duration, animations: {
+//                    self.mainLogoMark.transform = CGAffineTransformMakeScale(0.4, 0.4)
+//                    self.mainLogoMark.frame.origin.x = self.view.frame.origin.x+16
+//                    self.mainLogoMark.frame.origin.y = self.view.frame.origin.y+16
+//                })
+//        })
+//    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,7 +116,23 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
         //an error has occurred
         print("error")
     }
+    
+    func animateLogo() {
+        
+        let duration = 0.7
+        let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
+        let options = UIViewAnimationOptions.CurveLinear // change the timing curve to `ease-in ease-out`
+        
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+            self.mainLogo.alpha = 0
+            self.mainLogoMark.alpha = 1
+            }, completion: nil)
 
-
+        UIView.animateWithDuration(duration, delay: duration, options: options, animations: {
+            self.mainLogoMark.transform = CGAffineTransformMakeScale(0.4, 0.4)
+            self.mainLogoMark.frame.origin.x = self.view.frame.origin.x+16
+            self.mainLogoMark.frame.origin.y = self.view.frame.origin.y+16
+            }, completion: nil)
+    }
 }
 
