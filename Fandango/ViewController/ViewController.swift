@@ -12,6 +12,8 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     
     @IBOutlet weak var searchInputView: UIView!
     @IBOutlet weak var textInputField: UITextField!
+    @IBOutlet weak var mainLogo: UIImageView!
+    @IBOutlet weak var mainLogoMark: UIImageView!
     
     var movieTableViewController: MoviesTableViewController?
     
@@ -95,7 +97,23 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
         //an error has occurred
         print("error")
     }
+    
+    func animateLogo() {
+        
+        let duration = 0.7
+        let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
+        let options = UIViewAnimationOptions.CurveLinear // change the timing curve to `ease-in ease-out`
+        
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+            self.mainLogo.alpha = 0
+            self.mainLogoMark.alpha = 1
+            }, completion: nil)
 
-
+        UIView.animateWithDuration(duration, delay: duration, options: options, animations: {
+            self.mainLogoMark.transform = CGAffineTransformMakeScale(0.4, 0.4)
+            self.mainLogoMark.frame.origin.x = self.view.frame.origin.x+16
+            self.mainLogoMark.frame.origin.y = self.view.frame.origin.y+16
+            }, completion: nil)
+    }
 }
 
