@@ -79,3 +79,4 @@ extension Dictionary {
 }
 
 typealias MovieDictionary  = Dictionary<String, Movie>
+typealias MovieDictionarySet = Dictionary<String, Set<Movie>>
