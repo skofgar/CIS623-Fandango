@@ -67,7 +67,7 @@ class MoviesTableViewController: UITableViewController {
             movieCell.movieTitle.text = movie.name.localizedUppercaseString
 
             movieCell.movieImage.image = UIImage(named: movie.name)
-            movieCell.movies.removeAll()
+            print("movies: ", movieSet)
             movieCell.movies = movieSet
             cell = movieCell
         }

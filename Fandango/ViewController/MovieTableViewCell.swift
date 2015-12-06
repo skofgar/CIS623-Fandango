@@ -38,9 +38,7 @@ class MovieTableViewCell: UITableViewCell, UITableViewDataSource,UITableViewDele
             if (nil == dic[movie.theatre]) {
                 dic[movie.theatre] = Set<Movie>()
             }
-            if ((dic[movie.theatre]?.contains(movie)) == nil) {
-                dic[movie.theatre]?.insert(movie)
-            }
+            dic[movie.theatre]?.insert(movie)
         }
         
         self.theatres = [String] (dic.keys)
@@ -49,6 +47,9 @@ class MovieTableViewCell: UITableViewCell, UITableViewDataSource,UITableViewDele
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.theatreTableView.dataSource = self
+        self.theatreTableView.delegate = self
+        self.theatreTableView.separatorColor = UIColor.clearColor();
         // Initialization code
     }
 
@@ -75,12 +76,23 @@ class MovieTableViewCell: UITableViewCell, UITableViewDataSource,UITableViewDele
         
         if (nil != self.moviesByTheatreSet && cell is TheatreTableViewCell) {
             let theatreCell = cell as! TheatreTableViewCell
-            let movies = self.moviesByTheatreSet![self.theatres[indexPath.row]]
-            theatreCell.theatreName.text = movies?.first?.theatre
+            let movies = self.moviesByTheatreSet![self.theatres[indexPath.row]]!
+            theatreCell.theatreName.text = movies.first?.theatre.localizedUppercaseString
             
-            theatreCell.showtimeOne.titleLabel?.text = movies?.first?.showtime
-            theatreCell.showtimeOne.titleLabel?.text = movies?.first?.showtime//movies[movies?.startIndex.advancedBy(1)]
-            theatreCell.showtimeOne.titleLabel?.text = movies?.first?.showtime
+            let sortedMovies = movies.sort(before)
+            theatreCell.showtimeOne.setImage(UIImage(named: sortedMovies[0].showtime), forState: .Normal)
+            if (sortedMovies.count > 1) {
+                theatreCell.showtimeTwo.setImage(UIImage(named: sortedMovies[1].showtime), forState: .Normal)
+                theatreCell.showtimeTwo.hidden = false
+            } else {
+                theatreCell.showtimeTwo.hidden = true
+            }
+            if (sortedMovies.count > 2) {
+                theatreCell.showtimeThree.setImage(UIImage(named: sortedMovies[2].showtime), forState: .Normal)
+                                theatreCell.showtimeThree.hidden = false
+            } else {
+                theatreCell.showtimeThree.hidden = true
+            }
             
             //            let movieCell = cell as! MovieTableViewCell
 //            let allMoviesSet = self.data?.values
@@ -93,4 +105,7 @@ class MovieTableViewCell: UITableViewCell, UITableViewDataSource,UITableViewDele
         return cell
     }
 
+    func before(movieA: Movie, movieB: Movie) -> Bool {
+        return movieA.name < movieB.name
+    }
 }
