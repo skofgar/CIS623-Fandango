@@ -13,12 +13,15 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     @IBOutlet weak var searchInputView: UIView!
     @IBOutlet weak var textInputField: UITextField!
     
+    var movieTableViewController: MoviesTableViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SpeechKit.setupWithID(Constants.APP_ID, host: Constants.HOST, port: Constants.PORT, useSSL: Constants.USE_SSL, delegate: self)
         someAction()
-    }
 
+        self.movieTableViewController = self.childViewControllers[0] as? MoviesTableViewController
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,7 +84,8 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
         }
         textInputField.text = concatenatedString
         
-        print(LanguageParser.sharedInstance.parse(results.results as! [String]))
+        
+         self.movieTableViewController?.movies = LanguageParser.sharedInstance.parse(results.results as! [String])
     }
     
     func recognizer(recognizer: SKRecognizer!, didFinishWithError error: NSError!, suggestion: String!)

@@ -28,5 +28,14 @@ class MovieTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    var movieName: String {
+        get {
+            return movieTitle.text!
+        }
+        set(movieName) {
+            movieTitle.text = movieName
+        }
+    }
+    
 }

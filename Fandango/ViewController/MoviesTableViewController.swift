@@ -10,6 +10,17 @@ import UIKit
 
 class MoviesTableViewController: UITableViewController {
 
+    internal var data: MovieDictionarySet?
+    var movies: MovieDictionarySet? {
+        get {
+            return data
+        }
+        set(updatedMovieList) {
+            data = updatedMovieList
+            self.tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,23 +40,29 @@ class MoviesTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (nil == self.data) ? 0 : self.data!.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        var cell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath)
 
-        // Configure the cell...
-
+        if (nil != self.data && cell is MovieTableViewCell) {
+            let movieCell = cell as! MovieTableViewCell
+            let allMoviesSet = self.data?.values
+            let movieSet = allMoviesSet![self.data!.startIndex.advancedBy(indexPath.row)]
+            let movie = movieSet[movieSet.startIndex]
+            movieCell.movieName = movie.name
+            cell = movieCell
+        }
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

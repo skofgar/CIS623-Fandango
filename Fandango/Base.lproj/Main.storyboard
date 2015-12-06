@@ -129,13 +129,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="584" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="72c-MR-Gaq">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="179"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="170" id="mAj-WV-WUR"/>
-                                            </constraints>
-                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o7d-DU-O2g">
                                             <rect key="frame" x="178" y="0.0" width="390" height="72"/>
                                             <subviews>
@@ -143,7 +136,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CFO-S4-jnq" userLabel="Theatres">
@@ -153,7 +146,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="390" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-3Y-GAD" userLabel="Showtimes">
@@ -183,6 +176,13 @@
                                             </subviews>
                                             <animations/>
                                         </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="72c-MR-Gaq">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="179"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="170" id="mAj-WV-WUR"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
@@ -201,6 +201,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="movieImage" destination="72c-MR-Gaq" id="hdg-9V-NHD"/>
                                     <outlet property="movieTitle" destination="PO7-V7-bmg" id="lLt-fk-A0l"/>
