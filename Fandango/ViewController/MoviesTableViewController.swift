@@ -2,7 +2,6 @@
 //  MoviesTableViewController.swift
 //  Fandango
 //
-//  Created by Roland on 05/12/15.
 //  Copyright © 2015 CFR. All rights reserved.
 //
 
@@ -10,7 +9,7 @@ import UIKit
 
 class MoviesTableViewController: UITableViewController {
 
-    internal var data: MovieDictionarySet?
+    private var data: MovieDictionarySet?
     var movies: MovieDictionarySet? {
         get {
             return data
@@ -24,6 +23,7 @@ class MoviesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.separatorColor = UIColor.clearColor();
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -57,7 +57,11 @@ class MoviesTableViewController: UITableViewController {
             let allMoviesSet = self.data?.values
             let movieSet = allMoviesSet![self.data!.startIndex.advancedBy(indexPath.row)]
             let movie = movieSet[movieSet.startIndex]
-            movieCell.movieName = movie.name
+            movieCell.movieTitle.text = movie.name.localizedUppercaseString
+
+            movieCell.movieImage.image = UIImage(named: movie.name)
+            movieCell.movies.removeAll()
+            movieCell.movies = movieSet
             cell = movieCell
         }
         return cell

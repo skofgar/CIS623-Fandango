@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -52,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="278" id="dY8-z2-cdN"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="yqf-qv-Q9w" kind="embed" id="EdY-JD-pZD"/>
+                                    <segue destination="yqf-qv-Q9w" kind="embed" identifier="movieTable" id="EdY-JD-pZD"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbV-ox-EG6" userLabel="Search Bar">
@@ -116,7 +117,7 @@
         <scene sceneID="VxU-hD-p5b">
             <objects>
                 <tableViewController id="yqf-qv-Q9w" customClass="MoviesTableViewController" customModule="Fandango" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xpa-GP-VwU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xpa-GP-VwU">
                         <rect key="frame" x="0.0" y="0.0" width="584" height="278"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -129,41 +130,117 @@
                                     <rect key="frame" x="0.0" y="0.0" width="584" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o7d-DU-O2g">
-                                            <rect key="frame" x="178" y="0.0" width="390" height="72"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72c-MR-Gaq">
+                                            <rect key="frame" x="0.0" y="0.0" width="122" height="180"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="72c-MR-Gaq" secondAttribute="height" multiplier="61:90" id="NhY-QL-ED4"/>
+                                                <constraint firstAttribute="width" constant="240" id="mAj-WV-WUR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o7d-DU-O2g">
+                                            <rect key="frame" x="130" y="8" width="385" height="157"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO7-V7-bmg" userLabel="MovieTitle">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO7-V7-bmg" userLabel="MovieTitle">
+                                                    <rect key="frame" x="0.0" y="0.0" width="385" height="0.0"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CFO-S4-jnq" userLabel="Theatres">
-                                                    <rect key="frame" x="0.0" y="21" width="390" height="51"/>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hki-H8-sXy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="385" height="157"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="theatreCell" rowHeight="65" id="lOD-Ob-SS2" customClass="TheatreTableViewCell" customModule="Fandango" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28" width="385" height="65"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lOD-Ob-SS2" id="YTP-bz-wbk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="385" height="64"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OEd-Vv-NnI" userLabel="Theatres">
+                                                                        <rect key="frame" x="8" y="8" width="369" height="51"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bje-OV-cRV" userLabel="TheatreName">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="369" height="21"/>
+                                                                                <animations/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VsH-te-Vez" userLabel="Showtimes">
+                                                                                <rect key="frame" x="0.0" y="21" width="369" height="30"/>
+                                                                                <subviews>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC5-0m-ra7" userLabel="showtimeOne">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
+                                                                                        <animations/>
+                                                                                        <state key="normal" title="Button"/>
+                                                                                    </button>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyA-a4-Y7p" userLabel="ShowtimeTwo">
+                                                                                        <rect key="frame" x="123" y="0.0" width="123" height="30"/>
+                                                                                        <animations/>
+                                                                                        <state key="normal" title="Button"/>
+                                                                                    </button>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8Z-c9-dWv" userLabel="ShowtimeThree">
+                                                                                        <rect key="frame" x="246" y="0.0" width="123" height="30"/>
+                                                                                        <animations/>
+                                                                                        <state key="normal" title="Button"/>
+                                                                                    </button>
+                                                                                </subviews>
+                                                                                <animations/>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                        <animations/>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <animations/>
+                                                                <constraints>
+                                                                    <constraint firstItem="OEd-Vv-NnI" firstAttribute="leading" secondItem="YTP-bz-wbk" secondAttribute="leadingMargin" id="20w-eH-fBx"/>
+                                                                    <constraint firstItem="OEd-Vv-NnI" firstAttribute="top" secondItem="YTP-bz-wbk" secondAttribute="topMargin" id="6fJ-db-Pln"/>
+                                                                    <constraint firstAttribute="trailingMargin" secondItem="OEd-Vv-NnI" secondAttribute="trailing" id="XNG-1N-aQf"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <animations/>
+                                                            <connections>
+                                                                <outlet property="showtimeOne" destination="DC5-0m-ra7" id="qNu-iK-LEw"/>
+                                                                <outlet property="showtimeThree" destination="R8Z-c9-dWv" id="Hsp-mE-scR"/>
+                                                                <outlet property="showtimeTwo" destination="LyA-a4-Y7p" id="wLx-Xs-PG2"/>
+                                                                <outlet property="theatreName" destination="bje-OV-cRV" id="B4k-1g-fZ3"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="qCY-FE-kfc" id="9sk-Mr-9az"/>
+                                                        <outlet property="delegate" destination="qCY-FE-kfc" id="Rrj-5n-H7h"/>
+                                                    </connections>
+                                                </tableView>
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CFO-S4-jnq" userLabel="Theatres">
+                                                    <rect key="frame" x="0.0" y="157" width="385" height="0.0"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyc-fs-dIR" userLabel="TheatreName">
-                                                            <rect key="frame" x="0.0" y="0.0" width="390" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyc-fs-dIR" userLabel="TheatreName">
+                                                            <rect key="frame" x="0.0" y="0.0" width="385" height="0.0"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-3Y-GAD" userLabel="Showtimes">
-                                                            <rect key="frame" x="0.0" y="21" width="390" height="30"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-3Y-GAD" userLabel="Showtimes">
+                                                            <rect key="frame" x="0.0" y="0.0" width="385" height="0.0"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biv-Bv-Zhm" userLabel="ShowtimeOne">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biv-Bv-Zhm" userLabel="ShowtimeOne">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="0.0"/>
                                                                     <animations/>
                                                                     <state key="normal" title="Button"/>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoN-6C-HPA" userLabel="ShowtimeTwo">
-                                                                    <rect key="frame" x="130" y="0.0" width="130" height="30"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoN-6C-HPA" userLabel="ShowtimeTwo">
+                                                                    <rect key="frame" x="129" y="0.0" width="128" height="0.0"/>
                                                                     <animations/>
                                                                     <state key="normal" title="Button"/>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-4p-LmH" userLabel="ShowtimeThree">
-                                                                    <rect key="frame" x="260" y="0.0" width="130" height="30"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-4p-LmH" userLabel="ShowtimeThree">
+                                                                    <rect key="frame" x="257" y="0.0" width="128" height="0.0"/>
                                                                     <animations/>
                                                                     <state key="normal" title="Button"/>
                                                                 </button>
@@ -176,22 +253,16 @@
                                             </subviews>
                                             <animations/>
                                         </stackView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="72c-MR-Gaq">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="179"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="170" id="mAj-WV-WUR"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="72c-MR-Gaq" firstAttribute="leading" secondItem="rbW-vJ-SQv" secondAttribute="leading" id="5Jd-Vq-tly"/>
                                         <constraint firstItem="o7d-DU-O2g" firstAttribute="leading" secondItem="rbW-vJ-SQv" secondAttribute="leadingMargin" constant="170" id="5NF-p6-QiS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="o7d-DU-O2g" secondAttribute="trailing" constant="8" id="6DG-EU-OFu"/>
-                                        <constraint firstAttribute="bottom" secondItem="72c-MR-Gaq" secondAttribute="bottom" id="FSb-Am-GAU"/>
+                                        <constraint firstAttribute="bottom" secondItem="72c-MR-Gaq" secondAttribute="bottom" constant="-1" id="FSb-Am-GAU"/>
                                         <constraint firstItem="72c-MR-Gaq" firstAttribute="top" secondItem="rbW-vJ-SQv" secondAttribute="top" id="Ri5-Wj-3hH"/>
-                                        <constraint firstItem="o7d-DU-O2g" firstAttribute="leading" secondItem="72c-MR-Gaq" secondAttribute="trailing" constant="8" id="XTV-js-beW"/>
+                                        <constraint firstItem="o7d-DU-O2g" firstAttribute="leading" secondItem="72c-MR-Gaq" secondAttribute="trailing" constant="56" id="XTV-js-beW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="o7d-DU-O2g" secondAttribute="bottom" constant="22" id="ca2-XD-vYI"/>
                                         <constraint firstAttribute="topMargin" secondItem="o7d-DU-O2g" secondAttribute="top" constant="8" id="kff-Bp-njO"/>
                                     </constraints>
                                     <variation key="default">
@@ -209,6 +280,7 @@
                                     <outlet property="theatreOneShowtimeOne" destination="Biv-Bv-Zhm" id="ko9-MJ-7Mg"/>
                                     <outlet property="theatreOneShowtimeThree" destination="v9l-4p-LmH" id="YaT-1u-WeR"/>
                                     <outlet property="theatreOneShowtimeTwo" destination="LoN-6C-HPA" id="kzU-Pr-YVW"/>
+                                    <outlet property="theatreTableView" destination="hki-H8-sXy" id="KFC-Vp-w7r"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -221,6 +293,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zf0-2Q-APv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1141" y="266"/>
+        </scene>
+        <!--Theatre Table View Controller-->
+        <scene sceneID="BvM-ka-U4s">
+            <objects>
+                <tableViewController id="qCY-FE-kfc" customClass="TheatreTableViewController" customModule="Fandango" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="pKk-mQ-IaO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="eP9-po-IFH" customClass="TheatreTableViewCell" customModule="Fandango" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eP9-po-IFH" id="vPn-5m-289">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-Nc-J8a" userLabel="Theatres">
+                                            <rect key="frame" x="8" y="8" width="584" height="51"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYQ-ZX-GTl" userLabel="TheatreName">
+                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-uC-18j" userLabel="Showtimes">
+                                                    <rect key="frame" x="0.0" y="21" width="584" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXx-vw-r2Q" userLabel="ShowtimeOne">
+                                                            <rect key="frame" x="0.0" y="0.0" width="195" height="30"/>
+                                                            <animations/>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQs-cB-HCF" userLabel="ShowtimeTwo">
+                                                            <rect key="frame" x="195" y="0.0" width="194" height="30"/>
+                                                            <animations/>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z58-71-Ixi" userLabel="ShowtimeThree">
+                                                            <rect key="frame" x="389" y="0.0" width="195" height="30"/>
+                                                            <animations/>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <animations/>
+                                                </stackView>
+                                            </subviews>
+                                            <animations/>
+                                        </stackView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="SJx-Nc-J8a" firstAttribute="top" secondItem="vPn-5m-289" secondAttribute="topMargin" id="QtV-PF-8n7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SJx-Nc-J8a" secondAttribute="trailing" id="fto-K9-LYo"/>
+                                        <constraint firstItem="SJx-Nc-J8a" firstAttribute="leading" secondItem="vPn-5m-289" secondAttribute="leadingMargin" id="u1K-I5-nZE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qCY-FE-kfc" id="Lz8-Ib-498"/>
+                            <outlet property="delegate" destination="qCY-FE-kfc" id="fda-x3-QX0"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4U9-j9-2pY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="247"/>
         </scene>
     </scenes>
     <resources>

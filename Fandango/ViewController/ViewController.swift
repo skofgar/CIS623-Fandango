@@ -20,7 +20,7 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
         SpeechKit.setupWithID(Constants.APP_ID, host: Constants.HOST, port: Constants.PORT, useSSL: Constants.USE_SSL, delegate: self)
         someAction()
 
-        self.movieTableViewController = self.childViewControllers[0] as? MoviesTableViewController
+        self.movieTableViewController = self.childViewControllers[0] as! MoviesTableViewController
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,8 +84,10 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
         }
         textInputField.text = concatenatedString
         
+        let movies = LanguageParser.sharedInstance.parse(results.results as! [String])
+        print(movies)
         
-         self.movieTableViewController?.movies = LanguageParser.sharedInstance.parse(results.results as! [String])
+        self.movieTableViewController?.movies = movies
     }
     
     func recognizer(recognizer: SKRecognizer!, didFinishWithError error: NSError!, suggestion: String!)
