@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate {
 
     
+    @IBOutlet weak var tableViewContainer: UIView!
     @IBOutlet weak var searchInputView: UIView!
     @IBOutlet weak var textInputField: UITextField!
     @IBOutlet weak var mainLogo: UIImageView!
@@ -20,9 +21,12 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         SpeechKit.setupWithID(Constants.APP_ID, host: Constants.HOST, port: Constants.PORT, useSSL: Constants.USE_SSL, delegate: self)
-        someAction()
 
         self.movieTableViewController = self.childViewControllers[0] as! MoviesTableViewController
+        
+        let defaultMoviesToLoad = ["incredibles", "7", "8", "9"]
+        let movies = LanguageParser.sharedInstance.parse(defaultMoviesToLoad)
+        self.movieTableViewController?.movies = movies
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,9 +104,11 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     
     func animateLogo() {
         
-        let duration = 0.7
+        let duration = 0.5
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
-        let options = UIViewAnimationOptions.CurveLinear // change the timing curve to `ease-in ease-out`
+        let options = UIViewAnimationOptions.CurveEaseInOut // change the timing curve to `ease-in ease-out`
+        let TOP_INSET_MOVIES: CGFloat = 80
+        let TOP_INSET_MOVIE_CONTAINER_AFTER_ANIMATION = self.tableViewContainer.frame.origin.y - TOP_INSET_MOVIES
         
         UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
             self.mainLogo.alpha = 0
@@ -113,6 +119,10 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
             self.mainLogoMark.transform = CGAffineTransformMakeScale(0.4, 0.4)
             self.mainLogoMark.frame.origin.x = self.view.frame.origin.x+16
             self.mainLogoMark.frame.origin.y = self.view.frame.origin.y+16
+            
+            
+            self.tableViewContainer.frame.origin.y = TOP_INSET_MOVIES
+            self.tableViewContainer.frame.size.height += TOP_INSET_MOVIE_CONTAINER_AFTER_ANIMATION
             }, completion: nil)
     }
 }

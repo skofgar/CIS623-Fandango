@@ -34,7 +34,7 @@
                                         </constraints>
                                     </imageView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTb-yd-BMe" userLabel="Content">
-                                        <rect key="frame" x="8" y="233" width="312" height="279"/>
+                                        <rect key="frame" x="8" y="251" width="312" height="261"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="278" id="dY8-z2-cdN"/>
@@ -59,7 +59,7 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.65465477748691092" green="0.65465477748691092" blue="0.65465477748691092" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="tTb-yd-BMe" firstAttribute="top" secondItem="qap-NL-IeK" secondAttribute="bottom" constant="37" id="6me-rU-N3t"/>
+                                    <constraint firstItem="tTb-yd-BMe" firstAttribute="top" secondItem="qap-NL-IeK" secondAttribute="bottom" constant="55" id="6me-rU-N3t"/>
                                     <constraint firstItem="Hci-vd-Bxm" firstAttribute="leading" secondItem="UrK-Yy-sk0" secondAttribute="leading" id="8Av-cJ-Cqr"/>
                                     <constraint firstItem="tTb-yd-BMe" firstAttribute="centerX" secondItem="qap-NL-IeK" secondAttribute="centerX" id="Dpe-X0-2oW"/>
                                     <constraint firstItem="sjb-Bw-lWM" firstAttribute="top" secondItem="Hci-vd-Bxm" secondAttribute="top" constant="-64" id="Od2-gM-iyr"/>
@@ -133,6 +133,7 @@
                         <outlet property="mainLogo" destination="Hci-vd-Bxm" id="zil-3N-PKh"/>
                         <outlet property="mainLogoMark" destination="qap-NL-IeK" id="BuY-NP-wnw"/>
                         <outlet property="searchInputView" destination="UrK-Yy-sk0" id="wWK-8F-UG9"/>
+                        <outlet property="tableViewContainer" destination="tTb-yd-BMe" id="MXt-Gm-o5v"/>
                         <outlet property="textInputField" destination="Ecp-P6-3QN" id="jUc-Sk-PYZ"/>
                     </connections>
                 </viewController>
@@ -144,108 +145,102 @@
         <scene sceneID="VxU-hD-p5b">
             <objects>
                 <tableViewController id="yqf-qv-Q9w" customClass="MoviesTableViewController" customModule="Fandango" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xpa-GP-VwU">
-                        <rect key="frame" x="0.0" y="0.0" width="312" height="279"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="220" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xpa-GP-VwU">
+                        <rect key="frame" x="0.0" y="0.0" width="312" height="261"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="180" id="9pV-xI-dMd" customClass="MovieTableViewCell" customModule="Fandango" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="312" height="180"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="170" id="9pV-xI-dMd" customClass="MovieTableViewCell" customModule="Fandango" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="312" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9pV-xI-dMd" id="rbW-vJ-SQv" userLabel="Movie">
-                                    <rect key="frame" x="0.0" y="0.0" width="312" height="179"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="312" height="169"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o7d-DU-O2g">
-                                            <rect key="frame" x="141" y="0.0" width="163" height="171"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o7d-DU-O2g">
+                                            <rect key="frame" x="120" y="0.0" width="65" height="363"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO7-V7-bmg" userLabel="MovieTitle">
-                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO7-V7-bmg" userLabel="MovieTitle">
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="0.0"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hki-H8-sXy">
-                                                    <rect key="frame" x="0.0" y="24" width="163" height="147"/>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hki-H8-sXy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="363"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="theatreCell" rowHeight="101" id="lOD-Ob-SS2" customClass="TheatreTableViewCell" customModule="Fandango" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="28" width="163" height="101"/>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="theatreCell" rowHeight="120" id="lOD-Ob-SS2" customClass="TheatreTableViewCell" customModule="Fandango" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28" width="65" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lOD-Ob-SS2" id="YTP-bz-wbk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="163" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="119"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OEd-Vv-NnI" userLabel="Theatres">
-                                                                        <rect key="frame" x="8" y="8" width="147" height="46"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bje-OV-cRV" userLabel="TheatreName">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="21"/>
-                                                                                <animations/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <stackView opaque="NO" contentMode="left" distribution="equalSpacing" alignment="firstBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VsH-te-Vez" userLabel="Showtimes">
-                                                                                <rect key="frame" x="0.0" y="21" width="147" height="25"/>
-                                                                                <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC5-0m-ra7" userLabel="showtimeOne">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="37" height="25"/>
-                                                                                        <animations/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="height" constant="25" id="rQ7-Wn-3md"/>
-                                                                                            <constraint firstAttribute="width" secondItem="DC5-0m-ra7" secondAttribute="height" multiplier="3:1" id="zFn-UO-Q22"/>
-                                                                                        </constraints>
-                                                                                        <state key="normal" image="7"/>
-                                                                                        <variation key="default">
-                                                                                            <mask key="constraints">
-                                                                                                <exclude reference="zFn-UO-Q22"/>
-                                                                                            </mask>
-                                                                                        </variation>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyA-a4-Y7p" userLabel="ShowtimeTwo">
-                                                                                        <rect key="frame" x="42" y="0.0" width="50" height="25"/>
-                                                                                        <animations/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="LyA-a4-Y7p" secondAttribute="height" multiplier="2:1" id="izr-5J-jho"/>
-                                                                                            <constraint firstAttribute="height" constant="25" id="uWF-gE-ccZ"/>
-                                                                                        </constraints>
-                                                                                        <state key="normal" image="8"/>
-                                                                                        <variation key="default">
-                                                                                            <mask key="constraints">
-                                                                                                <exclude reference="izr-5J-jho"/>
-                                                                                            </mask>
-                                                                                        </variation>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8Z-c9-dWv" userLabel="ShowtimeThree">
-                                                                                        <rect key="frame" x="97" y="0.0" width="50" height="25"/>
-                                                                                        <animations/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="R8Z-c9-dWv" secondAttribute="height" multiplier="2:1" id="U7E-gZ-msH"/>
-                                                                                            <constraint firstAttribute="height" constant="25" id="aPB-TV-Zci"/>
-                                                                                        </constraints>
-                                                                                        <state key="normal" image="9"/>
-                                                                                        <variation key="default">
-                                                                                            <mask key="constraints">
-                                                                                                <exclude reference="U7E-gZ-msH"/>
-                                                                                            </mask>
-                                                                                        </variation>
-                                                                                    </button>
-                                                                                </subviews>
-                                                                                <animations/>
-                                                                            </stackView>
-                                                                        </subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bje-OV-cRV" userLabel="TheatreName">
+                                                                        <rect key="frame" x="8" y="8" width="34" height="21"/>
                                                                         <animations/>
-                                                                    </stackView>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC5-0m-ra7" userLabel="showtimeOne">
+                                                                        <rect key="frame" x="8" y="33" width="50" height="25"/>
+                                                                        <animations/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="25" id="rQ7-Wn-3md"/>
+                                                                            <constraint firstAttribute="width" secondItem="DC5-0m-ra7" secondAttribute="height" multiplier="3:1" id="zFn-UO-Q22"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="7"/>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="zFn-UO-Q22"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyA-a4-Y7p" userLabel="ShowtimeTwo">
+                                                                        <rect key="frame" x="0.0" y="33" width="50" height="25"/>
+                                                                        <animations/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="LyA-a4-Y7p" secondAttribute="height" multiplier="2:1" id="izr-5J-jho"/>
+                                                                            <constraint firstAttribute="height" constant="25" id="uWF-gE-ccZ"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="8"/>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="izr-5J-jho"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8Z-c9-dWv" userLabel="ShowtimeThree">
+                                                                        <rect key="frame" x="-8" y="33" width="50" height="25"/>
+                                                                        <animations/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="R8Z-c9-dWv" secondAttribute="height" multiplier="2:1" id="U7E-gZ-msH"/>
+                                                                            <constraint firstAttribute="height" constant="25" id="aPB-TV-Zci"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="9"/>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="U7E-gZ-msH"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </button>
                                                                 </subviews>
                                                                 <animations/>
                                                                 <constraints>
-                                                                    <constraint firstItem="OEd-Vv-NnI" firstAttribute="leading" secondItem="YTP-bz-wbk" secondAttribute="leadingMargin" id="20w-eH-fBx"/>
-                                                                    <constraint firstItem="OEd-Vv-NnI" firstAttribute="top" secondItem="YTP-bz-wbk" secondAttribute="topMargin" id="6fJ-db-Pln"/>
-                                                                    <constraint firstAttribute="trailingMargin" secondItem="OEd-Vv-NnI" secondAttribute="trailing" id="XNG-1N-aQf"/>
+                                                                    <constraint firstItem="DC5-0m-ra7" firstAttribute="leading" secondItem="YTP-bz-wbk" secondAttribute="leadingMargin" id="EXj-BK-iUd"/>
+                                                                    <constraint firstAttribute="leadingMargin" secondItem="bje-OV-cRV" secondAttribute="leading" id="LXH-pP-EYp"/>
+                                                                    <constraint firstAttribute="trailingMargin" secondItem="R8Z-c9-dWv" secondAttribute="trailing" id="fbT-Vq-Fue"/>
+                                                                    <constraint firstItem="R8Z-c9-dWv" firstAttribute="top" secondItem="bje-OV-cRV" secondAttribute="bottom" constant="4" id="j5O-q1-raC"/>
+                                                                    <constraint firstItem="DC5-0m-ra7" firstAttribute="top" secondItem="bje-OV-cRV" secondAttribute="bottom" constant="4" id="k12-IN-kn4"/>
+                                                                    <constraint firstItem="LyA-a4-Y7p" firstAttribute="centerX" secondItem="YTP-bz-wbk" secondAttribute="centerX" id="lCG-3K-NG0"/>
+                                                                    <constraint firstAttribute="trailingMargin" secondItem="bje-OV-cRV" secondAttribute="trailing" id="sRX-k9-0bl"/>
+                                                                    <constraint firstItem="bje-OV-cRV" firstAttribute="top" secondItem="YTP-bz-wbk" secondAttribute="topMargin" id="sXJ-t4-8mb"/>
+                                                                    <constraint firstItem="LyA-a4-Y7p" firstAttribute="top" secondItem="bje-OV-cRV" secondAttribute="bottom" constant="4" id="ziL-nI-Qr4"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <animations/>
@@ -262,8 +257,8 @@
                                             </subviews>
                                             <animations/>
                                         </stackView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="72c-MR-Gaq">
-                                            <rect key="frame" x="0.0" y="0.0" width="116" height="171"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72c-MR-Gaq">
+                                            <rect key="frame" x="0.0" y="0.0" width="107" height="365"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="72c-MR-Gaq" secondAttribute="height" multiplier="61:90" id="NhY-QL-ED4"/>
@@ -275,16 +270,18 @@
                                     <constraints>
                                         <constraint firstItem="72c-MR-Gaq" firstAttribute="leading" secondItem="rbW-vJ-SQv" secondAttribute="leading" id="5Jd-Vq-tly"/>
                                         <constraint firstItem="o7d-DU-O2g" firstAttribute="leading" secondItem="rbW-vJ-SQv" secondAttribute="leadingMargin" constant="170" id="5NF-p6-QiS"/>
-                                        <constraint firstAttribute="bottom" secondItem="72c-MR-Gaq" secondAttribute="bottom" constant="8" id="FSb-Am-GAU"/>
+                                        <constraint firstAttribute="bottom" secondItem="72c-MR-Gaq" secondAttribute="bottom" constant="30" id="FSb-Am-GAU"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="o7d-DU-O2g" secondAttribute="bottom" id="Nfc-JH-hF1"/>
                                         <constraint firstItem="72c-MR-Gaq" firstAttribute="top" secondItem="rbW-vJ-SQv" secondAttribute="top" id="Ri5-Wj-3hH"/>
                                         <constraint firstItem="o7d-DU-O2g" firstAttribute="top" secondItem="72c-MR-Gaq" secondAttribute="top" id="im2-1N-UfK"/>
-                                        <constraint firstItem="o7d-DU-O2g" firstAttribute="leading" secondItem="72c-MR-Gaq" secondAttribute="trailing" constant="25" id="mfN-0q-tsX"/>
+                                        <constraint firstItem="o7d-DU-O2g" firstAttribute="leading" secondItem="72c-MR-Gaq" secondAttribute="trailing" constant="8" id="mfN-0q-tsX"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="o7d-DU-O2g" secondAttribute="trailing" id="wTf-hg-dzv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="o7d-DU-O2g" secondAttribute="trailing" id="yaA-cZ-I4d"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="5NF-p6-QiS"/>
+                                            <exclude reference="wTf-hg-dzv"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -311,59 +308,78 @@
         <scene sceneID="BvM-ka-U4s">
             <objects>
                 <tableViewController id="qCY-FE-kfc" customClass="TheatreTableViewController" customModule="Fandango" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="pKk-mQ-IaO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="pKk-mQ-IaO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="eP9-po-IFH" customClass="TheatreTableViewCell" customModule="Fandango" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="65"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="74" id="eP9-po-IFH" customClass="TheatreTableViewCell" customModule="Fandango" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eP9-po-IFH" id="vPn-5m-289">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-Nc-J8a" userLabel="Theatres">
-                                            <rect key="frame" x="8" y="8" width="584" height="51"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYQ-ZX-GTl" userLabel="TheatreName">
+                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-Xv-5aT">
+                                            <rect key="frame" x="8" y="37" width="584" height="50"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYQ-ZX-GTl" userLabel="TheatreName">
-                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXx-vw-r2Q" userLabel="ShowtimeOne">
+                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-uC-18j" userLabel="Showtimes">
-                                                    <rect key="frame" x="0.0" y="21" width="584" height="30"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXx-vw-r2Q" userLabel="ShowtimeOne">
-                                                            <rect key="frame" x="0.0" y="0.0" width="195" height="30"/>
-                                                            <animations/>
-                                                            <state key="normal" title="Button"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQs-cB-HCF" userLabel="ShowtimeTwo">
-                                                            <rect key="frame" x="195" y="0.0" width="194" height="30"/>
-                                                            <animations/>
-                                                            <state key="normal" title="Button"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z58-71-Ixi" userLabel="ShowtimeThree">
-                                                            <rect key="frame" x="389" y="0.0" width="195" height="30"/>
-                                                            <animations/>
-                                                            <state key="normal" title="Button"/>
-                                                        </button>
-                                                    </subviews>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQs-cB-HCF" userLabel="ShowtimeTwo">
+                                                    <rect key="frame" x="269" y="0.0" width="46" height="30"/>
                                                     <animations/>
-                                                </stackView>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z58-71-Ixi" userLabel="ShowtimeThree">
+                                                    <rect key="frame" x="538" y="0.0" width="46" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <animations/>
-                                        </stackView>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="yQs-cB-HCF" firstAttribute="top" secondItem="ieO-Xv-5aT" secondAttribute="top" id="6Su-fb-MEg"/>
+                                                <constraint firstItem="Z58-71-Ixi" firstAttribute="leading" secondItem="yQs-cB-HCF" secondAttribute="trailing" priority="700" constant="135" id="LlF-Pj-Gaq"/>
+                                                <constraint firstItem="mXx-vw-r2Q" firstAttribute="top" secondItem="ieO-Xv-5aT" secondAttribute="top" id="OU2-Mc-XKk"/>
+                                                <constraint firstItem="Z58-71-Ixi" firstAttribute="top" secondItem="ieO-Xv-5aT" secondAttribute="top" id="Wrm-hQ-fVG"/>
+                                                <constraint firstItem="yQs-cB-HCF" firstAttribute="centerX" secondItem="ieO-Xv-5aT" secondAttribute="centerX" id="XIK-Ez-VkU"/>
+                                                <constraint firstItem="yQs-cB-HCF" firstAttribute="leading" secondItem="mXx-vw-r2Q" secondAttribute="trailing" constant="700" id="aUo-iz-H7s"/>
+                                                <constraint firstItem="yQs-cB-HCF" firstAttribute="leading" secondItem="Z58-71-Ixi" secondAttribute="trailing" priority="500" constant="10" id="dEz-49-6xN"/>
+                                                <constraint firstItem="yQs-cB-HCF" firstAttribute="leading" secondItem="mXx-vw-r2Q" secondAttribute="trailing" priority="500" constant="10" id="fYl-VH-z7q"/>
+                                                <constraint firstAttribute="height" constant="50" id="gTs-aF-NKP"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z58-71-Ixi" secondAttribute="trailing" id="klS-2N-6b4"/>
+                                                <constraint firstItem="mXx-vw-r2Q" firstAttribute="leading" secondItem="ieO-Xv-5aT" secondAttribute="leading" id="rbp-bH-2hn"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="aUo-iz-H7s"/>
+                                                    <exclude reference="dEz-49-6xN"/>
+                                                    <exclude reference="fYl-VH-z7q"/>
+                                                    <exclude reference="LlF-Pj-Gaq"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="SJx-Nc-J8a" firstAttribute="top" secondItem="vPn-5m-289" secondAttribute="topMargin" id="QtV-PF-8n7"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="SJx-Nc-J8a" secondAttribute="trailing" id="fto-K9-LYo"/>
-                                        <constraint firstItem="SJx-Nc-J8a" firstAttribute="leading" secondItem="vPn-5m-289" secondAttribute="leadingMargin" id="u1K-I5-nZE"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="ieO-Xv-5aT" secondAttribute="leading" id="DYh-2I-au7"/>
+                                        <constraint firstItem="UYQ-ZX-GTl" firstAttribute="top" secondItem="vPn-5m-289" secondAttribute="topMargin" id="UxD-d0-Yyj"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="UYQ-ZX-GTl" secondAttribute="leading" id="g9J-GS-eL0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ieO-Xv-5aT" secondAttribute="trailing" id="iRf-4b-TDL"/>
+                                        <constraint firstItem="ieO-Xv-5aT" firstAttribute="top" secondItem="UYQ-ZX-GTl" secondAttribute="bottom" constant="8" id="sn7-z3-eS2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UYQ-ZX-GTl" secondAttribute="trailing" id="vwN-TY-0tw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
