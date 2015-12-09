@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate {
 
     
+    @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var tableViewContainer: UIView!
     @IBOutlet weak var searchInputView: UIView!
     @IBOutlet weak var textInputField: UITextField!
@@ -17,6 +18,8 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     @IBOutlet weak var mainLogoMark: UIImageView!
     
     var movieTableViewController: MoviesTableViewController?
+    var isSearching = false
+    var upwards = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +39,9 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     var voiceSearch: SKRecognizer?
     func someAction()
     {
-        self.voiceSearch = SKRecognizer(type: SKTvRecognizerType, detection: UInt(SKShortEndOfSpeechDetection), language:"en-US", delegate: self)
+        if (!isSearching) {
+            self.voiceSearch = SKRecognizer(type: SKTvRecognizerType, detection: UInt(SKShortEndOfSpeechDetection), language:"en-US", delegate: self)
+        }
         
     }
     
@@ -66,11 +71,33 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     
     
     
+    func rotateIcon() {
+        
+        let duration = 1.0
+        let delay = 0.0
+
+        let options = UIViewAnimationOptions.CurveLinear
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+            self.microphoneButton.setImage(UIImage(named: "cancel_button"), forState: .Normal)
+            self.microphoneButton.imageView?.transform = CGAffineTransformRotate((self.microphoneButton.imageView?.transform)!, CGFloat(M_PI_2*2))
+            self.upwards = !self.upwards
+            }, completion: {
+                (value: Bool) in
+                if (value && (self.isSearching || !self.upwards)) {
+                    self.rotateIcon();
+                } else {
+                    self.microphoneButton.setImage(UIImage(named: "voice_button"), forState: .Normal)
+                }
+        })
+    }
+    
     // MARK: - SKRecognizer
     
     func recognizerDidBeginRecording(recognizer: SKRecognizer!)
     {
         //The recording has started
+        isSearching = true
+        rotateIcon()
         print("recording has started")
     }
     
@@ -82,6 +109,7 @@ class ViewController: UIViewController, SpeechKitDelegate, SKRecognizerDelegate 
     
     func recognizer(recognizer: SKRecognizer!, didFinishWithResults results: SKRecognition!)
     {
+        isSearching = false
         var concatenatedString = ""
         //The voice recognition process has understood something
         for value in results.results {
