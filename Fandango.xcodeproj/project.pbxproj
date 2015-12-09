@@ -7,21 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61415621C0B8EDB00200989 /* NuanceHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C61415611C0B8EDB00200989 /* NuanceHeader.m */; };
+		C616096F1C0B9BE2001BB42F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C616096E1C0B9BE2001BB42F /* Constants.swift */; };
+		C61ADEDB1C1289F700C19006 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61ADEDA1C1289F700C19006 /* Movie.swift */; };
+		C61ADEDD1C128A6A00C19006 /* MovieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61ADEDC1C128A6A00C19006 /* MovieCollection.swift */; };
+		C61ADEE11C12927300C19006 /* LanguageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61ADEE01C12927300C19006 /* LanguageParser.swift */; };
 		C68606701C0B79830036084E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686066F1C0B79830036084E /* AppDelegate.swift */; };
 		C68606721C0B79830036084E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68606711C0B79830036084E /* ViewController.swift */; };
 		C68606751C0B79830036084E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68606731C0B79830036084E /* Main.storyboard */; };
-		C68606771C0B79830036084E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68606761C0B79830036084E /* Assets.xcassets */; };
 		C686067A1C0B79830036084E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68606781C0B79830036084E /* LaunchScreen.storyboard */; };
+		C68606851C0B7CB10036084E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606841C0B7CB10036084E /* SystemConfiguration.framework */; };
+		C68606871C0B7CB60036084E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606861C0B7CB60036084E /* UIKit.framework */; };
+		C686068D1C0B7CD30036084E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606881C0B7CD30036084E /* AudioToolbox.framework */; };
+		C686068E1C0B7CD30036084E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606891C0B7CD30036084E /* AVFoundation.framework */; };
+		C686068F1C0B7CD40036084E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068A1C0B7CD30036084E /* CFNetwork.framework */; };
+		C68606901C0B7CD40036084E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068B1C0B7CD30036084E /* CoreGraphics.framework */; };
+		C68606911C0B7CD40036084E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686068C1C0B7CD30036084E /* Foundation.framework */; };
+		C68606931C0B7CDB0036084E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68606921C0B7CDB0036084E /* Security.framework */; };
+		C69D60B61C140D5400EF06E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69D60B51C140D5400EF06E6 /* Assets.xcassets */; };
+		C6D573961C13E212003125CF /* TheatreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D573951C13E212003125CF /* TheatreTableViewCell.swift */; };
+		C6D6FA241C13AC7F00AE387F /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D6FA231C13AC7F00AE387F /* MovieTableViewCell.swift */; };
+		C6D6FA261C13AD5200AE387F /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D6FA251C13AD5200AE387F /* MoviesTableViewController.swift */; };
+		C6F2A5A41C0B8009004DBB81 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C61415601C0B8EDB00200989 /* NuanceHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuanceHeader.h; sourceTree = "<group>"; };
+		C61415611C0B8EDB00200989 /* NuanceHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuanceHeader.m; sourceTree = "<group>"; };
+		C616096E1C0B9BE2001BB42F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C61ADEDA1C1289F700C19006 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C61ADEDC1C128A6A00C19006 /* MovieCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollection.swift; sourceTree = "<group>"; };
+		C61ADEE01C12927300C19006 /* LanguageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageParser.swift; sourceTree = "<group>"; };
 		C686066C1C0B79830036084E /* Fandango.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fandango.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C686066F1C0B79830036084E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68606711C0B79830036084E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C68606741C0B79830036084E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C68606761C0B79830036084E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C68606791C0B79830036084E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C686067B1C0B79830036084E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68606841C0B7CB10036084E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C68606861C0B7CB60036084E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C68606881C0B7CD30036084E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C68606891C0B7CD30036084E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C686068A1C0B7CD30036084E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C686068B1C0B7CD30036084E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C686068C1C0B7CD30036084E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C68606921C0B7CDB0036084E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C69D60B51C140D5400EF06E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6D573951C13E212003125CF /* TheatreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheatreTableViewCell.swift; sourceTree = "<group>"; };
+		C6D6FA231C13AC7F00AE387F /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		C6D6FA251C13AD5200AE387F /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
+		C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = lib/SpeechKit.framework; sourceTree = "<group>"; };
+		C6F2A5A81C0B8406004DBB81 /* Fandango-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fandango-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,16 +65,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68606931C0B7CDB0036084E /* Security.framework in Frameworks */,
+				C686068D1C0B7CD30036084E /* AudioToolbox.framework in Frameworks */,
+				C686068E1C0B7CD30036084E /* AVFoundation.framework in Frameworks */,
+				C6F2A5A41C0B8009004DBB81 /* SpeechKit.framework in Frameworks */,
+				C686068F1C0B7CD40036084E /* CFNetwork.framework in Frameworks */,
+				C68606901C0B7CD40036084E /* CoreGraphics.framework in Frameworks */,
+				C68606911C0B7CD40036084E /* Foundation.framework in Frameworks */,
+				C68606871C0B7CB60036084E /* UIKit.framework in Frameworks */,
+				C68606851C0B7CB10036084E /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C616096D1C0B9BD8001BB42F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C616096E1C0B9BE2001BB42F /* Constants.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C61609701C0B9BFE001BB42F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C68606711C0B79830036084E /* ViewController.swift */,
+				C6D6FA231C13AC7F00AE387F /* MovieTableViewCell.swift */,
+				C6D573951C13E212003125CF /* TheatreTableViewCell.swift */,
+				C6D6FA251C13AD5200AE387F /* MoviesTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C61ADED91C12896D00C19006 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C61ADEE01C12927300C19006 /* LanguageParser.swift */,
+				C61ADEDA1C1289F700C19006 /* Movie.swift */,
+				C61ADEDC1C128A6A00C19006 /* MovieCollection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C68606631C0B79830036084E = {
 			isa = PBXGroup;
 			children = (
 				C686066E1C0B79830036084E /* Fandango */,
+				C68606831C0B7BF40036084E /* Frameworks */,
 				C686066D1C0B79830036084E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,14 +129,51 @@
 		C686066E1C0B79830036084E /* Fandango */ = {
 			isa = PBXGroup;
 			children = (
+				C616096D1C0B9BD8001BB42F /* Config */,
+				C61ADED91C12896D00C19006 /* Model */,
+				C61609701C0B9BFE001BB42F /* ViewController */,
+				C6F2A5A51C0B8385004DBB81 /* Voice */,
 				C686066F1C0B79830036084E /* AppDelegate.swift */,
-				C68606711C0B79830036084E /* ViewController.swift */,
-				C68606731C0B79830036084E /* Main.storyboard */,
-				C68606761C0B79830036084E /* Assets.xcassets */,
+				C69D60B51C140D5400EF06E6 /* Assets.xcassets */,
 				C68606781C0B79830036084E /* LaunchScreen.storyboard */,
-				C686067B1C0B79830036084E /* Info.plist */,
+				C68606731C0B79830036084E /* Main.storyboard */,
+				C6F2A5AB1C0B8411004DBB81 /* Supporting Files */,
 			);
 			path = Fandango;
+			sourceTree = "<group>";
+		};
+		C68606831C0B7BF40036084E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6F2A5A31C0B8009004DBB81 /* SpeechKit.framework */,
+				C68606921C0B7CDB0036084E /* Security.framework */,
+				C68606881C0B7CD30036084E /* AudioToolbox.framework */,
+				C68606891C0B7CD30036084E /* AVFoundation.framework */,
+				C686068A1C0B7CD30036084E /* CFNetwork.framework */,
+				C686068B1C0B7CD30036084E /* CoreGraphics.framework */,
+				C686068C1C0B7CD30036084E /* Foundation.framework */,
+				C68606861C0B7CB60036084E /* UIKit.framework */,
+				C68606841C0B7CB10036084E /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6F2A5A51C0B8385004DBB81 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				C61415601C0B8EDB00200989 /* NuanceHeader.h */,
+				C61415611C0B8EDB00200989 /* NuanceHeader.m */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		C6F2A5AB1C0B8411004DBB81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6F2A5A81C0B8406004DBB81 /* Fandango-Bridging-Header.h */,
+				C686067B1C0B79830036084E /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +208,7 @@
 				TargetAttributes = {
 					C686066B1C0B79830036084E = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = EJCEW8H58U;
 					};
 				};
 			};
@@ -123,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C686067A1C0B79830036084E /* LaunchScreen.storyboard in Resources */,
-				C68606771C0B79830036084E /* Assets.xcassets in Resources */,
+				C69D60B61C140D5400EF06E6 /* Assets.xcassets in Resources */,
 				C68606751C0B79830036084E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C61ADEE11C12927300C19006 /* LanguageParser.swift in Sources */,
+				C616096F1C0B9BE2001BB42F /* Constants.swift in Sources */,
+				C61415621C0B8EDB00200989 /* NuanceHeader.m in Sources */,
+				C61ADEDB1C1289F700C19006 /* Movie.swift in Sources */,
+				C6D573961C13E212003125CF /* TheatreTableViewCell.swift in Sources */,
 				C68606721C0B79830036084E /* ViewController.swift in Sources */,
 				C68606701C0B79830036084E /* AppDelegate.swift in Sources */,
+				C6D6FA261C13AD5200AE387F /* MoviesTableViewController.swift in Sources */,
+				C6D6FA241C13AC7F00AE387F /* MovieTableViewCell.swift in Sources */,
+				C61ADEDD1C128A6A00C19006 /* MovieCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +270,7 @@
 				C68606741C0B79830036084E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		C68606781C0B79830036084E /* LaunchScreen.storyboard */ = {
@@ -157,6 +279,7 @@
 				C68606791C0B79830036084E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -247,10 +370,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Fandango/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
+				INFOPLIST_FILE = "Fandango/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gvsu.cis623.cfr.Fandango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fandango/Supporting Files/Fandango-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -258,10 +392,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Fandango/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
+				INFOPLIST_FILE = "Fandango/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gvsu.cis623.cfr.Fandango;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fandango/Supporting Files/Fandango-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -284,6 +428,7 @@
 				C68606801C0B79830036084E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

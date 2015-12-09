@@ -17,6 +17,13 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+
+# Project related
+
+lib/
+
+
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
